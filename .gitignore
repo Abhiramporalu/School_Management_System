@@ -5,6 +5,9 @@ client/node_modules/
 
 # Backend & Database (Pushing only frontend per request)
 server/
+backend/
+server
+backend
 /package.json
 /package-lock.json
 *.pid
