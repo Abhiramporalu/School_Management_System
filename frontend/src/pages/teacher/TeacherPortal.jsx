@@ -262,8 +262,12 @@ export default function TeacherPortal() {
         <div>
           <div className="px-3 py-2 mb-4 border-b border-slate-800">
             <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">Faculty Portal</span>
-            <h2 className="text-sm font-extrabold text-white mt-0.5">Mrs. Sarah Jenkins</h2>
-            <p className="text-[11px] text-slate-400">Class Teacher (10-A) • Mathematics PGT</p>
+            <h2 className="text-sm font-extrabold text-white mt-0.5">
+              {user ? `${user.firstName || ''} ${user.lastName || ''}`.trim() || 'Faculty Member' : 'Faculty Member'}
+            </h2>
+            <p className="text-[11px] text-slate-400">
+              {user?.teacher?.designation || user?.designation || 'Class Teacher & Subject Faculty'}
+            </p>
           </div>
 
           <nav className="space-y-1 text-xs font-semibold">
@@ -294,8 +298,12 @@ export default function TeacherPortal() {
         </div>
 
         <div className="pt-4 border-t border-slate-800 px-3 text-[11px] text-slate-400">
-          <p className="font-semibold text-slate-200">Department: Mathematics</p>
-          <p className="text-[10px] text-slate-500">Employee ID: EMP-TCH-001</p>
+          <p className="font-semibold text-slate-200">
+            Department: {user?.teacher?.department_name || user?.department_name || 'Academics'}
+          </p>
+          <p className="text-[10px] text-slate-500">
+            Employee ID: {user?.teacher?.employee_id || user?.employeeId || user?.username || 'FACULTY'}
+          </p>
         </div>
       </aside>
 

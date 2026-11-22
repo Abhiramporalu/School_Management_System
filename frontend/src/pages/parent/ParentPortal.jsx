@@ -125,7 +125,9 @@ export default function ParentPortal({ onOpenIdCard, onOpenReportCard, onOpenRec
           {/* Guardian Info */}
           <div className="px-3 py-2 border-b border-slate-800 mb-3">
             <span className="text-[10px] font-bold uppercase tracking-wider text-purple-400">Guardian Portal</span>
-            <h2 className="text-sm font-extrabold text-white mt-0.5">Mr. Rajesh Sharma</h2>
+            <h2 className="text-sm font-extrabold text-white mt-0.5">
+              {user ? `${user.firstName || ''} ${user.lastName || ''}`.trim() || 'Parent / Guardian' : 'Parent / Guardian'}
+            </h2>
             <p className="text-[10px] text-slate-400">Linked to {childrenList.length} Students</p>
           </div>
 
@@ -264,7 +266,7 @@ export default function ParentPortal({ onOpenIdCard, onOpenReportCard, onOpenRec
 
             {/* Teacher Commendation Card */}
             <div className="p-5 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl border border-purple-200">
-              <span className="text-xs font-bold text-purple-800 uppercase tracking-wide">Class Teacher Note (Mrs. Sarah Jenkins)</span>
+              <span className="text-xs font-bold text-purple-800 uppercase tracking-wide">Class Teacher Note & Feedback</span>
               <p className="text-xs text-slate-700 italic mt-2 leading-relaxed">
                 "{currentChild.first_name} has shown outstanding aptitude in Mathematics and Science. He actively helps peers in laboratory sessions and maintains exemplary discipline."
               </p>

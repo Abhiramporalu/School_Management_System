@@ -292,8 +292,12 @@ export default function AdminPortal({ onOpenIdCard, onOpenReportCard, onOpenRece
         </div>
 
         <div className="pt-4 border-t border-slate-800 px-3 text-[11px] text-slate-400">
-          <p className="font-semibold text-slate-200">Abhiram</p>
-          <p className="text-[10px] text-slate-500">Super Administrator</p>
+          <p className="font-semibold text-slate-200">
+            {user ? `${user.firstName || ''} ${user.lastName || ''}`.trim() || 'Administrator' : 'Administrator'}
+          </p>
+          <p className="text-[10px] text-slate-500">
+            {user?.role === 'super_admin' ? 'Super Administrator' : 'Administrator'}
+          </p>
         </div>
       </aside>
 
