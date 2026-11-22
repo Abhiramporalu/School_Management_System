@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+client/node_modules/
+
+# Backend & Database (Pushing only frontend per request)
+server/
+/package.json
+/package-lock.json
+*.pid
+
+# Production build artifacts
+frontend/dist/
+dist/
+
+# Environment variables
+.env
+.env.*
+
+# Local Symlinks & OS
+client
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Editor
+.vscode/
+.idea/
